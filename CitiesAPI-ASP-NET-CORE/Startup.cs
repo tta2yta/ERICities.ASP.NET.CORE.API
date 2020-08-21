@@ -35,6 +35,7 @@ namespace CitiesAPI_ASP_NET_CORE
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStatusCodePages();
             app.UseMvc();
         }
     }
