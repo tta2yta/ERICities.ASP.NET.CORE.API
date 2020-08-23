@@ -107,12 +107,13 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
             if (pointOfInterestFromStore == null)
                 return NotFound();
             pointOfInterestFromStore.Name = pointOfInterestUpdateDto.name;
-            pointOfInterestFromStore.Name = pointOfInterestUpdateDto.name;
+            pointOfInterestFromStore.Description = pointOfInterestUpdateDto.description;
 
             return NoContent();
 
         }
 
+        [HttpPatch("{id}")]
         public IActionResult partiallyUpadatePointOfInterest(int cityid, int id,
             [FromBody] JsonPatchDocument<PointOfInterestUpdateDto> patchDoc)
         {
@@ -146,7 +147,7 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
                 return BadRequest();
 
             pointOfInterestFromStore.Name = pointOfInterestPatch.name;
-            pointOfInterestFromStore.Name = pointOfInterestPatch.name;
+            pointOfInterestFromStore.Description = pointOfInterestPatch.description;
 
             return NoContent();
         }
