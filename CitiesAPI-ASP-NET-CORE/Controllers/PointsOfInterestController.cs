@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CitiesAPI.ASP.NET.CORE.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace CitiesAPI.ASP.NET.CORE.Controllers
 {
@@ -48,8 +49,19 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
         }
 
           [HttpPost]
-        public IActionResult CreatePointOfInterest(int cityId, PointOfInterestCreationDto pointOfInterestCreationDto)
+        public IActionResult CreatePointOfInterest(int cityId, 
+             [FromBody] PointOfInterestCreationDto pointOfInterestCreationDto)
         {
+            if(pointOfInterestCreationDto.name == pointOfInterestCreationDto.description)
+            {
+                ModelState.AddModelError(
+                    "description",
+                    "Please provide another value, name and description should not be thesame");
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var city = CitiesDataStore.Current.Cities
                 .SingleOrDefault(c => c.Id == cityId);
             if (city == null)
