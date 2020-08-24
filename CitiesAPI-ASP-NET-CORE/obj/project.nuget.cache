@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IedcwgXxUGuS9hUu+faWVuS0nqNCFwQxRYYleo7kEShbR5DlOe3y/UcbYF8OXZO4jVygioi1DHbPXKT6n23sbA==",
+  "dgSpecHash": "kEtmECf5vpE4SV1AS+4+SVTcJUsTHIiWIhCfCG6nBACgc2SCQbK1Zj90qmoXcmjZ7jf0gii0i6pWhXRq0x4kOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\TED\\source\\repos\\CitiesAPI-ASP-NET-CORE\\CitiesAPI-ASP-NET-CORE\\CitiesAPI.ASP.NET.CORE.csproj",
   "expectedPackageFiles": [
@@ -182,6 +182,9 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\TED\\.nuget\\packages\\nlog\\4.7.2\\nlog.4.7.2.nupkg.sha512",
+    "C:\\Users\\TED\\.nuget\\packages\\nlog.extensions.logging\\1.6.4\\nlog.extensions.logging.1.6.4.nupkg.sha512",
+    "C:\\Users\\TED\\.nuget\\packages\\nlog.web.aspnetcore\\4.9.3\\nlog.web.aspnetcore.4.9.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\TED\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

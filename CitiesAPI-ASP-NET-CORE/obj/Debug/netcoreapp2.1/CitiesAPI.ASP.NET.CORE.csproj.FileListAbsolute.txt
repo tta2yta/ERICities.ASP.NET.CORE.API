@@ -5,7 +5,6 @@ C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debu
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.deps.json
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.runtimeconfig.json
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.runtimeconfig.dev.json
-C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.csproj.CoreCompileInputs.cache
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.RazorAssemblyInfo.cache
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.RazorAssemblyInfo.cs
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.AssemblyInfoInputs.cache
@@ -16,3 +15,5 @@ C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debu
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.genruntimeconfig.cache
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.pdb
 C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.csprojAssemblyReference.cache
+C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debug\netcoreapp2.1\nlog.config
+C:\Users\TED\source\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.csproj.CoreCompileInputs.cache
