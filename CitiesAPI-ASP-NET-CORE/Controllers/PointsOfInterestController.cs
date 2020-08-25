@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using CitiesAPI.ASP.NET.CORE.Models;
+using CitiesAPI.ASP.NET.CORE.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -18,10 +19,13 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
     {
 
         private readonly ILogger<PointsOfInterestController> _logger;
+        private readonly IMailService _localMailService;
 
-        public PointsOfInterestController (ILogger<PointsOfInterestController> logger)
+        public PointsOfInterestController (ILogger<PointsOfInterestController> logger,
+            IMailService localMailService)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _localMailService = localMailService ?? throw new ArgumentNullException(nameof(logger)); ;
         }
 
 
@@ -189,6 +193,8 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
                 return NotFound();
 
             city.PointsOfInterest.Remove(pointOfInterestFromStore);
+            _localMailService.send("Point of Interst deleted",
+                $"Point of Interest {pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id}");
 
             return NoContent();
         }

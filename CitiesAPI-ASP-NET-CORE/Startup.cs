@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CitiesAPI.ASP.NET.CORE.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +32,11 @@ namespace CitiesAPI_ASP_NET_CORE
                     o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
                     //o.OutputFormatters.Clear();
                 });
-
+#if DEBUG
+            services.AddTransient<IMailService, LocalMailService>();
+#else
+            services.AddTransient<IMailService, CloudMailServices>();
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
