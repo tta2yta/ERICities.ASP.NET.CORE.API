@@ -43,3 +43,15 @@
 2020-08-25 15:40:19.9449|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 12270.5392ms 200 application/json; charset=utf-8
 2020-08-25 15:40:50.2630|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/favicon.ico  
 2020-08-25 15:40:50.9086|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 294.6212ms 404 text/plain
+2020-08-25 15:59:01.4386|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\TED\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-08-25 15:59:24.4972|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/values  
+2020-08-25 15:59:24.5514|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:1028/  0
+2020-08-25 15:59:29.2373|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 5570.6967ms 200 
+2020-08-25 15:59:45.3250|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller CitiesAPI.ASP.NET.CORE.Controllers.ValuesController (CitiesAPI.ASP.NET.CORE).
+2020-08-25 15:59:57.3602|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-08-25 15:59:58.3267|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.2228ms.
+2020-08-25 15:59:59.0891|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'.
+2020-08-25 16:00:03.3625|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) in 17139.7545ms
+2020-08-25 16:00:04.7135|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 40095.4546ms 200 application/json; charset=utf-8
+2020-08-25 16:00:07.6952|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/favicon.ico  
+2020-08-25 16:00:08.3921|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1642.0792ms 404 text/plain
