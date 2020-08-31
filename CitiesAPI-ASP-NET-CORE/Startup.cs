@@ -39,9 +39,9 @@ namespace CitiesAPI_ASP_NET_CORE
 #else
             services.AddTransient<IMailService, CloudMailServices>();
 #endif
-
+            var connstr= Configuration.GetConnectionString("cityinfoconnectionstring");
             services.AddDbContext<CityInfoContext>(o=> 
-            o.UseSqlServer(Configuration.GetConnectionString("connectionstring"));
+            o.UseSqlServer(Configuration.GetConnectionString("cityinfoconnectionstring")));
 
         }
 
