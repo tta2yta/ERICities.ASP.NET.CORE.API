@@ -39,7 +39,7 @@ namespace CitiesAPI.ASP.NET.CORE.Services
 
         public IEnumerable<PointOfInterest> GetPointOfInterests(int cityId)
         {
-            throw new NotImplementedException();
+            return _context.PointOfInterests.Where(c => c.CityId == cityId).ToList();
         }
     }
 }
