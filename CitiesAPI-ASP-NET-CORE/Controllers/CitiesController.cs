@@ -42,15 +42,41 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Getcity(int id)
+        public IActionResult Getcity(int id, bool includePointOfInterest=false)
         {
-            var returnCity = CitiesDataStore.Current.Cities.
-                FirstOrDefault(c => c.Id == id);
-            if (returnCity == null)
-            {
+            var city = _cityInfoRepository.GetCity(id, includePointOfInterest);
+            if (city == null)
                 return NotFound();
+            if(includePointOfInterest)
+            {
+                var cityresult = new CityDto()
+                {
+                    Id = city.Id,
+                    Name = city.Name,
+                    Description = city.Description
+                };
+
+                foreach(var poi in city.pointOfInterests)
+                {
+                    cityresult.PointsOfInterest.Add(new PointOfInterestDto()
+                    {
+                        Id = poi.Id,
+                        Name = poi.Name,
+                        Description = poi.Description
+                    });
+                }
+                return Ok(cityresult);
+
             }
-            return Ok(returnCity);
+
+            var cityWithOutPointOfInterest = new CityWithouPointOfInterest()
+            {
+                Id = city.Id,
+                name = city.Name,
+                description = city.Description
+            };
+
+            return Ok(cityWithOutPointOfInterest);
         }
     }
 }
