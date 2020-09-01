@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CitiesAPI.ASP.NET.CORE.Models;
+using CitiesAPI.ASP.NET.CORE.Services;
 
 namespace CitiesAPI.ASP.NET.CORE.Controllers
 {
@@ -13,20 +14,31 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
     [ApiController]
     public class CitiesController : ControllerBase
     {
+        private readonly ICityInfoRepository _cityInfoRepository;
 
-      //  [HttpGet("api/cities")]
-     // [HttpGet]
-        /*  public JsonResult GetCities()
-          {
-              return new JsonResult(new List<object>(){
-                     new {id=1, name="Asmara"},
-                     new{id=2, name="Keren"}
-              }); 
-          }*/
+        public CitiesController(ICityInfoRepository cityInfoRepository)
+        {
+            _cityInfoRepository = cityInfoRepository;
+        }
+     
         [HttpGet]
         public ActionResult GetCities()
         {
-            return Ok(CitiesDataStore.Current.Cities);
+            //  return Ok(CitiesDataStore.Current.Cities);
+
+            var cityEntities = _cityInfoRepository.GetCities();
+            var results = new List<CityWithouPointOfInterest>();
+
+            foreach( var cityEntity in cityEntities)
+            {
+                results.Add(new CityWithouPointOfInterest()
+                {
+                    Id=cityEntity.Id,
+                    name=cityEntity.Name,
+                    description=cityEntity.Description
+                });
+            }
+            return Ok(results);
         }
 
         [HttpGet("{id}")]
