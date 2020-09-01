@@ -43,6 +43,8 @@ namespace CitiesAPI_ASP_NET_CORE
             services.AddDbContext<CityInfoContext>(o=> 
             o.UseSqlServer(Configuration.GetConnectionString("cityinfoconnectionstring")));
 
+            services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+
         }
 
         
