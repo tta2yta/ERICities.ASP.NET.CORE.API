@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CitiesAPI.ASP.NET.CORE.Models;
 using CitiesAPI.ASP.NET.CORE.Services;
+using AutoMapper;
 
 namespace CitiesAPI.ASP.NET.CORE.Controllers
 {
@@ -15,10 +16,12 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
     public class CitiesController : ControllerBase
     {
         private readonly ICityInfoRepository _cityInfoRepository;
+        private readonly IMapper _mapper;
 
-        public CitiesController(ICityInfoRepository cityInfoRepository)
+        public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
         {
             _cityInfoRepository = cityInfoRepository;
+            _mapper = mapper;
         }
      
         [HttpGet]
@@ -27,7 +30,7 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
             //  return Ok(CitiesDataStore.Current.Cities);
 
             var cityEntities = _cityInfoRepository.GetCities();
-            var results = new List<CityWithouPointOfInterest>();
+          /*  var results = new List<CityWithouPointOfInterest>();
 
             foreach( var cityEntity in cityEntities)
             {
@@ -37,8 +40,8 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
                     name=cityEntity.Name,
                     description=cityEntity.Description
                 });
-            }
-            return Ok(results);
+            }*/
+            return Ok(_mapper.Map<IEnumerable<CityWithouPointOfInterest>>(cityEntities));
         }
 
         [HttpGet("{id}")]

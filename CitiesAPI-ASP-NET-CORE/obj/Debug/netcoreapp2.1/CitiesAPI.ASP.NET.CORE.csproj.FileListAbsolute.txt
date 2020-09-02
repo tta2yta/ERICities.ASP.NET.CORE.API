@@ -15,3 +15,6 @@ F:\DATA-BACKUP\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debug\net
 F:\DATA-BACKUP\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.dll
 F:\DATA-BACKUP\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.RazorTargetAssemblyInfo.cache
 F:\DATA-BACKUP\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.genruntimeconfig.cache
+F:\DATA-BACKUP\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\bin\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.pdb
+F:\DATA-BACKUP\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.dll
+F:\DATA-BACKUP\repos\CitiesAPI-ASP-NET-CORE\CitiesAPI-ASP-NET-CORE\obj\Debug\netcoreapp2.1\CitiesAPI.ASP.NET.CORE.pdb
