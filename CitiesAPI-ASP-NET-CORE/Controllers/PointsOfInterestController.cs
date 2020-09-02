@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using CitiesAPI.ASP.NET.CORE.Models;
 using CitiesAPI.ASP.NET.CORE.Services;
 using Microsoft.AspNetCore.Http;
@@ -21,13 +22,15 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
         private readonly ILogger<PointsOfInterestController> _logger;
         private readonly IMailService _localMailService;
         private readonly ICityInfoRepository _cityInfoRepository;
+        private readonly IMapper _mapper;
 
         public PointsOfInterestController (ILogger<PointsOfInterestController> logger,
-            IMailService localMailService, ICityInfoRepository cityInfoRepository)
+            IMailService localMailService, ICityInfoRepository cityInfoRepository, IMapper mapper)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _localMailService = localMailService ?? throw new ArgumentNullException(nameof(logger));
             _cityInfoRepository = cityInfoRepository;
+            _mapper = mapper;
         }
 
 
@@ -44,7 +47,7 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
                 }
 
                 var pointOfinterestForCity = _cityInfoRepository.GetPointOfInterests(cityid);
-                var results = new List<PointOfInterestDto>();
+                /*var results = new List<PointOfInterestDto>();
                 foreach(var poi in pointOfinterestForCity)
                 {
                     results.Add(new PointOfInterestDto()
@@ -54,7 +57,8 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
                         Description = poi.Description
                     });
                 }
-                return Ok(results);
+                return Ok(results);*/
+                return Ok(_mapper.Map<IEnumerable<PointOfInterestDto>>(pointOfinterestForCity));
             }
             catch(Exception ex)
             {
@@ -78,14 +82,15 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
             if (pointOfInterest == null)
                 return NotFound();
 
-            var result = new PointOfInterestDto()
-            {
-                Id = pointOfInterest.Id,
-                Name = pointOfInterest.Name,
-                Description = pointOfInterest.Description
-            };
+            /*  var result = new PointOfInterestDto()
+              {
+                  Id = pointOfInterest.Id,
+                  Name = pointOfInterest.Name,
+                  Description = pointOfInterest.Description
+              };
 
-            return Ok(result);
+              return Ok(result);*/
+            return Ok(_mapper.Map<PointOfInterestDto>(pointOfInterest));
 
         }
 
