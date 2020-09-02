@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using CitiesAPI.ASP.NET.CORE.Entitiy;
 using CitiesAPI.ASP.NET.CORE.Models;
 using CitiesAPI.ASP.NET.CORE.Services;
 using Microsoft.AspNetCore.Http;
@@ -108,24 +109,30 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var city = CitiesDataStore.Current.Cities
-                .SingleOrDefault(c => c.Id == cityId);
-            if (city == null)
+           /* var city = CitiesDataStore.Current.Cities
+                .SingleOrDefault(c => c.Id == cityId);*/
+
+            if (! _cityInfoRepository.CityExists(cityId))
                 return NotFound();
+            /*
+                        var newPointOfInterestId = CitiesDataStore.Current.Cities
+                            .SelectMany(p => p.PointsOfInterest).Max(c => c.Id);*/
+            var finalPointOfInterest = _mapper.Map<PointOfInterest>(pointOfInterestCreationDto);
+            _cityInfoRepository.AddPointOfInterest(cityId, finalPointOfInterest);
+            _cityInfoRepository.Save();
 
-            var newPointOfInterestId = CitiesDataStore.Current.Cities
-                .SelectMany(p => p.PointsOfInterest).Max(c => c.Id);
+            var createdPointofInterest = _mapper.Map<PointOfInterestDto>(finalPointOfInterest);
 
-            var newPointOfInterest = new PointOfInterestDto()
+          /*  var newPointOfInterest = new PointOfInterestDto()
             {
                 Id = ++newPointOfInterestId,
                 Name = pointOfInterestCreationDto.name,
                 Description = pointOfInterestCreationDto.description
             };
-            city.PointsOfInterest.Add(newPointOfInterest);
+            city.PointsOfInterest.Add(newPointOfInterest);*/
 
             return CreatedAtRoute("GetPointOfInterest",
-                new { city, id = newPointOfInterest.Id }, newPointOfInterest);
+                new { cityId, id = createdPointofInterest.Id }, createdPointofInterest);
         }
 
         [HttpPut("{id}")]

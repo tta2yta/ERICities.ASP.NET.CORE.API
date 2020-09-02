@@ -12,6 +12,7 @@ namespace CitiesAPI.ASP.NET.CORE.Profiles
         public PointOfInterestProfile()
         {
             CreateMap<Entitiy.PointOfInterest, PointOfInterestDto>();
+            CreateMap<Models.PointOfInterestCreationDto, Entitiy.PointOfInterest>();
         }
     }
 }
