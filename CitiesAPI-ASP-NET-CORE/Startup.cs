@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using AutoMapper;
 
 namespace CitiesAPI_ASP_NET_CORE
 {
@@ -44,6 +45,7 @@ namespace CitiesAPI_ASP_NET_CORE
             o.UseSqlServer(Configuration.GetConnectionString("cityinfoconnectionstring")));
 
             services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
         }
 

@@ -12,5 +12,6 @@ namespace CitiesAPI.ASP.NET.CORE.Services
         City GetCity(int cityId, bool includePointOfInterest);
         IEnumerable<PointOfInterest> GetPointOfInterests(int cityId);
         PointOfInterest GetPointOfInterest(int cityId, int pointOfInterstId );
+        bool CityExists(int cityid);
     }
 }

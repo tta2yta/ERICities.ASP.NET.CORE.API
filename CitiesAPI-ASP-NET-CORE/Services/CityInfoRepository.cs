@@ -16,6 +16,12 @@ namespace CitiesAPI.ASP.NET.CORE.Services
         {
             _context = context;
         }
+
+        public bool CityExists(int cityid)
+        {
+          return  _context.Cities.Any(c => c.Id == cityid);
+        }
+
         public IEnumerable<City> GetCities()
         {
             return _context.Cities.OrderBy(c=> c.Name).ToList();

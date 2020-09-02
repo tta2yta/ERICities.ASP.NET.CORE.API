@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "smd9B65Rrm0ZFSsvecBxeqPymdWw4GgCLW6bEWLsKgV7Hhlj9T/0A5u7y7tKuOAFY860aps3bjL5v4aThjRzcw==",
+  "dgSpecHash": "p4R/xNqEspUc5nGFWLwRJRPremwa53Nm2SQxYAYR7+rIggZKnHfWGdmRtRjbkR6/YeDqY36BPyz+maX00+vYtw==",
   "success": true,
   "projectFilePath": "F:\\DATA-BACKUP\\repos\\CitiesAPI-ASP-NET-CORE\\CitiesAPI-ASP-NET-CORE\\CitiesAPI.ASP.NET.CORE.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\TED\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\TED\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\TED\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\TED\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",
     "C:\\Users\\TED\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.1.1\\microsoft.aspnetcore.antiforgery.2.1.1.nupkg.sha512",
