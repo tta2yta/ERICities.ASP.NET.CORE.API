@@ -52,7 +52,7 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
                 return NotFound();
             if(includePointOfInterest)
             {
-                var cityresult = new CityDto()
+                /*var cityresult = new CityDto()
                 {
                     Id = city.Id,
                     Name = city.Name,
@@ -67,19 +67,21 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
                         Name = poi.Name,
                         Description = poi.Description
                     });
-                }
-                return Ok(cityresult);
+                }*/
+                // return Ok(cityresult);
+                return Ok(_mapper.Map<CityDto>(city));
 
             }
 
-            var cityWithOutPointOfInterest = new CityWithouPointOfInterest()
-            {
-                Id = city.Id,
-                name = city.Name,
-                description = city.Description
-            };
+            /* var cityWithOutPointOfInterest = new CityWithouPointOfInterest()
+             {
+                 Id = city.Id,
+                 name = city.Name,
+                 description = city.Description
+             };
 
-            return Ok(cityWithOutPointOfInterest);
+             return Ok(cityWithOutPointOfInterest);*/
+            return Ok(_mapper.Map<CityWithouPointOfInterest>(city));
         }
     }
 }
