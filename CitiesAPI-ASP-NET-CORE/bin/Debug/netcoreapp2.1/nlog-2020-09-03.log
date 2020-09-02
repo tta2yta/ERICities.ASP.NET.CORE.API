@@ -1,0 +1,144 @@
+2020-09-03 00:14:38.3833|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\TED\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-09-03 00:14:40.1494|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/values  
+2020-09-03 00:14:40.1494|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:1028/  0
+2020-09-03 00:14:40.2887|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 130.7269ms 200 
+2020-09-03 00:14:40.7760|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller CitiesAPI.ASP.NET.CORE.Controllers.ValuesController (CitiesAPI.ASP.NET.CORE).
+2020-09-03 00:14:41.0682|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-03 00:14:41.1152|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.9001ms.
+2020-09-03 00:14:41.1735|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'.
+2020-09-03 00:14:41.3399|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) in 545.7507ms
+2020-09-03 00:14:41.4674|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1229.5371ms 200 application/json; charset=utf-8
+2020-09-03 00:14:42.2305|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/favicon.ico  
+2020-09-03 00:14:42.2545|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 7.9652ms 404 text/plain
+2020-09-03 00:15:51.3977|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:1028/api/cities/3/pointsofinterest application/json 117
+2020-09-03 00:15:51.5017|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "CreatePointOfInterest", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreatePointOfInterest(Int32, CitiesAPI.ASP.NET.CORE.Models.PointOfInterestCreationDto) on controller CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController (CitiesAPI.ASP.NET.CORE).
+2020-09-03 00:15:53.2961|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-03 00:15:54.3645|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-09-03 00:15:55.5363|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (134ms) [Parameters=[@__cityid_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c]
+        WHERE [c].[Id] = @__cityid_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2020-09-03 00:16:19.7810|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (99ms) [Parameters=[@__cityId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [Cities] AS [c]
+WHERE [c].[Id] = @__cityId_0
+2020-09-03 00:16:20.3032|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (183ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PointOfInterests] ([CityId], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [PointOfInterests]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-09-03 00:16:40.9550|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 47650.1541ms.
+2020-09-03 00:16:40.9948|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'CitiesAPI.ASP.NET.CORE.Models.PointOfInterestDto'.
+2020-09-03 00:16:41.1247|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) in 49616.782ms
+2020-09-03 00:16:41.2887|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-09-03 00:16:41.4212|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 50014.7816ms 500 text/html; charset=utf-8
+2020-09-03 00:22:15.9000|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\TED\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-09-03 00:22:20.5587|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/values  
+2020-09-03 00:22:20.5587|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:1028/  0
+2020-09-03 00:22:20.5659|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:1028/api/cities/3/pointsofinterest application/json 117
+2020-09-03 00:22:20.6880|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 99.596ms 200 
+2020-09-03 00:22:21.3953|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller CitiesAPI.ASP.NET.CORE.Controllers.ValuesController (CitiesAPI.ASP.NET.CORE).
+2020-09-03 00:22:21.4317|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "CreatePointOfInterest", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreatePointOfInterest(Int32, CitiesAPI.ASP.NET.CORE.Models.PointOfInterestCreationDto) on controller CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController (CitiesAPI.ASP.NET.CORE).
+2020-09-03 00:22:22.6260|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-03 00:22:22.9488|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.9802ms.
+2020-09-03 00:22:23.1616|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'.
+2020-09-03 00:22:23.6663|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) in 2196.2918ms
+2020-09-03 00:22:23.8107|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3207.5698ms 200 application/json; charset=utf-8
+2020-09-03 00:22:26.7619|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-03 00:22:27.8159|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-09-03 00:22:29.4379|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (168ms) [Parameters=[@__cityid_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c]
+        WHERE [c].[Id] = @__cityid_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2020-09-03 00:22:34.9630|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (185ms) [Parameters=[@__cityId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [Cities] AS [c]
+WHERE [c].[Id] = @__cityId_0
+2020-09-03 00:22:35.9641|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (395ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PointOfInterests] ([CityId], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [PointOfInterests]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-09-03 00:22:37.6793|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 10909.4497ms.
+2020-09-03 00:22:37.6961|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'CitiesAPI.ASP.NET.CORE.Models.PointOfInterestDto'.
+2020-09-03 00:22:37.7241|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) in 16276.2996ms
+2020-09-03 00:22:37.8792|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-09-03 00:22:38.0941|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 17522.0265ms 500 text/html; charset=utf-8
+2020-09-03 00:23:05.1197|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:1028/api/cities/3/pointsofinterest application/json 117
+2020-09-03 00:23:05.1820|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "CreatePointOfInterest", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreatePointOfInterest(Int32, CitiesAPI.ASP.NET.CORE.Models.PointOfInterestCreationDto) on controller CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController (CitiesAPI.ASP.NET.CORE).
+2020-09-03 00:23:05.3101|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-03 00:23:05.3557|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-09-03 00:23:05.5592|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (190ms) [Parameters=[@__cityid_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c]
+        WHERE [c].[Id] = @__cityid_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2020-09-03 00:23:09.1576|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (83ms) [Parameters=[@__cityId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [Cities] AS [c]
+WHERE [c].[Id] = @__cityId_0
+2020-09-03 00:23:09.3580|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (162ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PointOfInterests] ([CityId], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [PointOfInterests]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-09-03 00:23:10.0223|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 4690.7814ms.
+2020-09-03 00:23:10.0360|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'CitiesAPI.ASP.NET.CORE.Models.PointOfInterestDto'.
+2020-09-03 00:23:10.0526|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) in 4856.536ms
+2020-09-03 00:23:10.0927|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-09-03 00:23:10.1395|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 5011.0849ms 500 text/html; charset=utf-8
+2020-09-03 00:24:29.6153|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\TED\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-09-03 00:24:31.1126|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:1028/  0
+2020-09-03 00:24:31.1126|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/values  
+2020-09-03 00:24:31.2447|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 120.26ms 200 
+2020-09-03 00:24:31.6706|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller CitiesAPI.ASP.NET.CORE.Controllers.ValuesController (CitiesAPI.ASP.NET.CORE).
+2020-09-03 00:24:31.8238|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-03 00:24:31.8396|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.9697ms.
+2020-09-03 00:24:31.8681|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'.
+2020-09-03 00:24:31.9713|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) in 288.3924ms
+2020-09-03 00:24:32.0549|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 906.1365ms 200 application/json; charset=utf-8
+2020-09-03 00:24:57.3697|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 POST http://localhost:1028/api/cities/3/pointsofinterest application/json 117
+2020-09-03 00:24:57.9216|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "CreatePointOfInterest", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreatePointOfInterest(Int32, CitiesAPI.ASP.NET.CORE.Models.PointOfInterestCreationDto) on controller CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController (CitiesAPI.ASP.NET.CORE).
+2020-09-03 00:25:01.3414|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-03 00:25:02.3941|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-09-03 00:25:03.9758|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (162ms) [Parameters=[@__cityid_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c]
+        WHERE [c].[Id] = @__cityid_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2020-09-03 00:25:07.3252|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (109ms) [Parameters=[@__cityId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Description], [c].[Name]
+FROM [Cities] AS [c]
+WHERE [c].[Id] = @__cityId_0
+2020-09-03 00:25:07.8656|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (131ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PointOfInterests] ([CityId], [Description], [Name])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [PointOfInterests]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-09-03 00:25:08.9079|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.CreatedAtRouteResult in 7547.718ms.
+2020-09-03 00:25:08.9350|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'CitiesAPI.ASP.NET.CORE.Models.PointOfInterestDto'.
+2020-09-03 00:25:08.9826|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) in 11037.0345ms
+2020-09-03 00:25:09.1255|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-09-03 00:25:09.2769|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 11908.5385ms 500 text/html; charset=utf-8
