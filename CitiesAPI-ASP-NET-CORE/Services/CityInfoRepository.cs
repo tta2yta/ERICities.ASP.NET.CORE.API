@@ -17,6 +17,8 @@ namespace CitiesAPI.ASP.NET.CORE.Services
             _context = context;
         }
 
+       
+
         public bool CityExists(int cityid)
         {
           return  _context.Cities.Any(c => c.Id == cityid);
@@ -46,6 +48,17 @@ namespace CitiesAPI.ASP.NET.CORE.Services
         public IEnumerable<PointOfInterest> GetPointOfInterests(int cityId)
         {
             return _context.PointOfInterests.Where(c => c.CityId == cityId).ToList();
+        }
+
+        public void AddPointOfInterest(int cityId, PointOfInterest pointOfInterest)
+        {
+            var city = GetCity(cityId, false);
+            city.pointOfInterests.Add(pointOfInterest);
+        }
+
+        public bool Save()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }
