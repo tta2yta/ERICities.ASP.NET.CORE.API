@@ -162,8 +162,11 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
             var pointOfInterestFromStore = _cityInfoRepository.GetPointOfInterest(cityid, id);
             if (pointOfInterestFromStore == null)
                 return NotFound();
-            pointOfInterestFromStore.Name = pointOfInterestUpdateDto.name;
-            pointOfInterestFromStore.Description = pointOfInterestUpdateDto.description;
+            /* pointOfInterestFromStore.Name = pointOfInterestUpdateDto.name;
+             pointOfInterestFromStore.Description = pointOfInterestUpdateDto.description;*/
+            _mapper.Map(pointOfInterestUpdateDto, pointOfInterestFromStore);
+            _cityInfoRepository.UpdatePointOfInterest(cityid, pointOfInterestFromStore);
+            _cityInfoRepository.Save();
 
             return NoContent();
 

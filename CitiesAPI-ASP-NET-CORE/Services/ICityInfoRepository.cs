@@ -14,6 +14,7 @@ namespace CitiesAPI.ASP.NET.CORE.Services
         PointOfInterest GetPointOfInterest(int cityId, int pointOfInterstId );
         bool CityExists(int cityid);
         void AddPointOfInterest(int cityId, PointOfInterest pointOfInterest);
+        void UpdatePointOfInterest(int cityId, PointOfInterest pointOfInterest);
         bool Save();
     }
 }

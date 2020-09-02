@@ -60,5 +60,10 @@ namespace CitiesAPI.ASP.NET.CORE.Services
         {
             return (_context.SaveChanges() >= 0);
         }
+
+        public void UpdatePointOfInterest(int cityId, PointOfInterest pointOfInterest)
+        {
+            
+        }
     }
 }

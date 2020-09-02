@@ -142,3 +142,13 @@ WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
 2020-09-03 00:25:08.9826|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.CreatePointOfInterest (CitiesAPI.ASP.NET.CORE) in 11037.0345ms
 2020-09-03 00:25:09.1255|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
 2020-09-03 00:25:09.2769|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 11908.5385ms 500 text/html; charset=utf-8
+2020-09-03 01:11:09.8416|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\TED\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-09-03 01:11:11.8652|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/values  
+2020-09-03 01:11:11.8652|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:1028/  0
+2020-09-03 01:11:11.9953|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 116.6856ms 200 
+2020-09-03 01:11:12.5237|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller CitiesAPI.ASP.NET.CORE.Controllers.ValuesController (CitiesAPI.ASP.NET.CORE).
+2020-09-03 01:11:12.8309|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-03 01:11:12.8502|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.1301ms.
+2020-09-03 01:11:12.8908|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'.
+2020-09-03 01:11:13.0694|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) in 529.7312ms
+2020-09-03 01:11:13.1186|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1236.6009ms 200 application/json; charset=utf-8
