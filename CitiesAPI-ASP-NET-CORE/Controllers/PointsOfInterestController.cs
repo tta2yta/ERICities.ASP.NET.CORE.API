@@ -148,14 +148,18 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityid);
+            /*var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityid);
             if(city == null)
             {
                 return NotFound();
-            }
+            }*/
 
-            var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(
-                p => p.Id == id);
+            if (!_cityInfoRepository.CityExists(cityid))
+                return NotFound();
+
+            /*  var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(
+                  p => p.Id == id);*/
+            var pointOfInterestFromStore = _cityInfoRepository.GetPointOfInterest(cityid, id);
             if (pointOfInterestFromStore == null)
                 return NotFound();
             pointOfInterestFromStore.Name = pointOfInterestUpdateDto.name;
