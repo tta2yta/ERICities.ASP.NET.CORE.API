@@ -224,9 +224,9 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult UpdatePointOfInterest(int cityid, int id)
+        public IActionResult DeletePointOfInterest(int cityid, int id)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityid);
+            /*var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityid);
             if (city == null)
             {
                 return NotFound();
@@ -235,11 +235,24 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
             var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(
                 p => p.Id == id);
             if (pointOfInterestFromStore == null)
+                return NotFound();*/
+
+            if (!_cityInfoRepository.CityExists(cityid))
                 return NotFound();
 
-            city.PointsOfInterest.Remove(pointOfInterestFromStore);
+            var pointOfInterestEntitiy = _cityInfoRepository.GetPointOfInterest(cityid, id);
+            if (pointOfInterestEntitiy == null)
+                return NotFound();
+
+
+            _cityInfoRepository.DeletePointOfInterest(pointOfInterestEntitiy);
+            _cityInfoRepository.Save();
             _localMailService.send("Point of Interst deleted",
-                $"Point of Interest {pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id}");
+                $"Point of Interest {pointOfInterestEntitiy.Name} with id {pointOfInterestEntitiy.Id}");
+            /*city.PointsOfInterest.Remove(pointOfInterestFromStore);
+            _localMailService.send("Point of Interst deleted",
+                $"Point of Interest {pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id}");*/
+
 
             return NoContent();
         }
