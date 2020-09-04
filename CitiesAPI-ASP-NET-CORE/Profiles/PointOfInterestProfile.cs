@@ -13,7 +13,7 @@ namespace CitiesAPI.ASP.NET.CORE.Profiles
         {
             CreateMap<Entitiy.PointOfInterest, PointOfInterestDto>();
             CreateMap<Models.PointOfInterestCreationDto, Entitiy.PointOfInterest>();
-            CreateMap<Models.PointOfInterestUpdateDto, Entitiy.PointOfInterest>();
+            CreateMap<Models.PointOfInterestUpdateDto, Entitiy.PointOfInterest>().ReverseMap();
         }
     }
 }
