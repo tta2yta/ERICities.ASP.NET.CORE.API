@@ -213,9 +213,13 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
             if (!TryValidateModel(pointOfInterestPatch))
                 return BadRequest();
 
-            pointOfInterestFromStore.Name = pointOfInterestPatch.name;
-            pointOfInterestFromStore.Description = pointOfInterestPatch.description;
+            _mapper.Map(pointOfInterestPatch, pointOfInterestEntitiy);
+            _cityInfoRepository.UpdatePointOfInterest(cityid, pointOfInterestEntitiy);
+            _cityInfoRepository.Save();
 
+           /* pointOfInterestFromStore.Name = pointOfInterestPatch.name;
+            pointOfInterestFromStore.Description = pointOfInterestPatch.description;
+*/
             return NoContent();
         }
 
