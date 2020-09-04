@@ -65,5 +65,10 @@ namespace CitiesAPI.ASP.NET.CORE.Services
         {
             
         }
+
+        public void DeletePointOfInterest(PointOfInterest pointOfInterest)
+        {
+            _context.PointOfInterests.Remove(pointOfInterest);
+        }
     }
 }
