@@ -176,15 +176,21 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
         public IActionResult partiallyUpadatePointOfInterest(int cityid, int id,
             [FromBody] JsonPatchDocument<PointOfInterestUpdateDto> patchDoc)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityid);
+            /*var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityid);
             if (city == null)
             {
                 return NotFound();
-            }
+            }*/
 
-            var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(
+            if (!_cityInfoRepository.CityExists(cityid))
+                return NotFound();
+
+            /*var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(
                 p => p.Id == id);
             if (pointOfInterestFromStore == null)
+                return NotFound();*/
+            var pointOfInterestEntitiy = _cityInfoRepository.GetPointOfInterest(cityid, id);
+            if (pointOfInterestEntitiy == null)
                 return NotFound();
 
             var pointOfInterestPatch = new PointOfInterestUpdateDto()
