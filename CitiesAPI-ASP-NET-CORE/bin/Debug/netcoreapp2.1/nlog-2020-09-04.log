@@ -1,0 +1,87 @@
+2020-09-04 23:10:37.8454|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\TED\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-09-04 23:10:41.9883|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/values  
+2020-09-04 23:10:41.9883|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:1028/  0
+2020-09-04 23:10:41.9883|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PUT http://localhost:1028/api/cities/1/pointsofinterest/1 application/json 46
+2020-09-04 23:10:42.2434|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 233.4781ms 200 
+2020-09-04 23:10:42.8021|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller CitiesAPI.ASP.NET.CORE.Controllers.ValuesController (CitiesAPI.ASP.NET.CORE).
+2020-09-04 23:10:42.8548|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "UpdatePointOfInterest", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdatePointOfInterest(Int32, Int32, CitiesAPI.ASP.NET.CORE.Models.PointOfInterestUpdateDto) on controller CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController (CitiesAPI.ASP.NET.CORE).
+2020-09-04 23:10:43.4430|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-04 23:10:43.4761|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.7857ms.
+2020-09-04 23:10:43.5257|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'.
+2020-09-04 23:10:43.9416|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.ValuesController.Get (CitiesAPI.ASP.NET.CORE) in 1104.4964ms
+2020-09-04 23:10:44.2433|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 2064.3449ms 200 application/json; charset=utf-8
+2020-09-04 23:10:44.5996|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/favicon.ico  
+2020-09-04 23:10:44.6209|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 37.9279ms 404 text/plain
+2020-09-04 23:10:46.3580|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.UpdatePointOfInterest (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-04 23:10:47.6738|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-09-04 23:10:51.6898|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (272ms) [Parameters=[@__cityid_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c]
+        WHERE [c].[Id] = @__cityid_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2020-09-04 23:10:52.0875|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (242ms) [Parameters=[@__cityId_0='?' (DbType = Int32), @__pointOfInterstId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CityId], [c].[Description], [c].[Name]
+FROM [PointOfInterests] AS [c]
+WHERE ([c].[CityId] = @__cityId_0) AND ([c].[Id] = @__pointOfInterstId_1)
+2020-09-04 23:10:52.7432|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (294ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PointOfInterests] SET [Description] = @p0, [Name] = @p1
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+2020-09-04 23:10:52.7898|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.UpdatePointOfInterest (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 6401.6366ms.
+2020-09-04 23:10:52.8429|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2020-09-04 23:10:52.8589|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.UpdatePointOfInterest (CitiesAPI.ASP.NET.CORE) in 9987.5475ms
+2020-09-04 23:10:52.9084|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 10905.2559ms 204 
+2020-09-04 23:11:04.3858|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PATCH http://localhost:1028/api/cities/1/pointsofinterest/1 application/json 101
+2020-09-04 23:11:04.4397|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "partiallyUpadatePointOfInterest", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult partiallyUpadatePointOfInterest(Int32, Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[CitiesAPI.ASP.NET.CORE.Models.PointOfInterestUpdateDto]) on controller CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController (CitiesAPI.ASP.NET.CORE).
+2020-09-04 23:11:04.5697|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.partiallyUpadatePointOfInterest (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-04 23:11:04.5916|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-09-04 23:11:04.7878|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (170ms) [Parameters=[@__cityid_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c]
+        WHERE [c].[Id] = @__cityid_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2020-09-04 23:11:04.9570|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (130ms) [Parameters=[@__cityId_0='?' (DbType = Int32), @__pointOfInterstId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CityId], [c].[Description], [c].[Name]
+FROM [PointOfInterests] AS [c]
+WHERE ([c].[CityId] = @__cityId_0) AND ([c].[Id] = @__pointOfInterstId_1)
+2020-09-04 23:11:05.1090|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (95ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PointOfInterests] SET [Name] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2020-09-04 23:11:05.1528|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.partiallyUpadatePointOfInterest (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 550.4312ms.
+2020-09-04 23:11:05.2498|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2020-09-04 23:11:05.2802|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.partiallyUpadatePointOfInterest (CitiesAPI.ASP.NET.CORE) in 811.1626ms
+2020-09-04 23:11:05.2989|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 909.0248ms 204 
+2020-09-04 23:11:14.1505|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PATCH http://localhost:1028/api/cities/1/pointsofinterest/1 application/json 206
+2020-09-04 23:11:14.1775|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "partiallyUpadatePointOfInterest", controller = "PointsOfInterest"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult partiallyUpadatePointOfInterest(Int32, Int32, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[CitiesAPI.ASP.NET.CORE.Models.PointOfInterestUpdateDto]) on controller CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController (CitiesAPI.ASP.NET.CORE).
+2020-09-04 23:11:14.3089|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.partiallyUpadatePointOfInterest (CitiesAPI.ASP.NET.CORE) - Validation state: Valid
+2020-09-04 23:11:14.3335|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.1.14-servicing-32113 initialized 'CityInfoContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-09-04 23:11:14.4714|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (121ms) [Parameters=[@__cityid_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cities] AS [c]
+        WHERE [c].[Id] = @__cityid_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2020-09-04 23:11:14.5730|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (94ms) [Parameters=[@__cityId_0='?' (DbType = Int32), @__pointOfInterstId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CityId], [c].[Description], [c].[Name]
+FROM [PointOfInterests] AS [c]
+WHERE ([c].[CityId] = @__cityId_0) AND ([c].[Id] = @__pointOfInterstId_1)
+2020-09-04 23:11:14.7701|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (107ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [PointOfInterests] SET [Description] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2020-09-04 23:11:14.7907|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.partiallyUpadatePointOfInterest (CitiesAPI.ASP.NET.CORE), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 462.6516ms.
+2020-09-04 23:11:14.8139|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2020-09-04 23:11:14.8139|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CitiesAPI.ASP.NET.CORE.Controllers.PointsOfInterestController.partiallyUpadatePointOfInterest (CitiesAPI.ASP.NET.CORE) in 637.725ms
+2020-09-04 23:11:14.8487|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 684.2873ms 204 
