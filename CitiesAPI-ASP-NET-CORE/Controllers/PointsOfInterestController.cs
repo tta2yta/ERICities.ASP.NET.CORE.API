@@ -193,11 +193,13 @@ namespace CitiesAPI.ASP.NET.CORE.Controllers
             if (pointOfInterestEntitiy == null)
                 return NotFound();
 
-            var pointOfInterestPatch = new PointOfInterestUpdateDto()
+            /*var pointOfInterestPatch = new PointOfInterestUpdateDto()
             {
                 name = pointOfInterestFromStore.Name,
                 description = pointOfInterestFromStore.Description
-            };
+            };*/
+
+            var pointOfInterestPatch = _mapper.Map<PointOfInterestUpdateDto>(pointOfInterestEntitiy);
             patchDoc.ApplyTo(pointOfInterestPatch, ModelState);
 
             if (pointOfInterestPatch.name == pointOfInterestPatch.description)
